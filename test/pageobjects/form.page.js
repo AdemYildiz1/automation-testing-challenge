@@ -1,6 +1,6 @@
 const Page = require('./main.page');
 
-class formPage extends Page {
+class formPage extends Page {   //SHOULD BE MainPage, NOT JUST PAGE
 
     // contains all selectors for the page 
    

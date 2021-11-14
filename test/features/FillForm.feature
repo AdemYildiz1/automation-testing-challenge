@@ -15,7 +15,7 @@ I want to be able complete the above scenario by passing in an array of user det
 So that I can make this feature run for any amount of user details passed in
 
   #LOCATORS
-  # Forms= //div[@class='card mt-4 top-card'][2]
+  # Forms= //div[@class='card mt-4 top-card'][2] or //*[@class='category-cards']//h5[.='Forms'] ->Dynamically
   # Practice Forms= //span[text()='Practice Form']
 #id=firstName
 #id=lastName
@@ -28,8 +28,11 @@ So that I can make this feature run for any amount of user details passed in
 
 Feature: Form
 
-  Scenario Outline: Submitting form
+  Background:
     Given The tester on web page of demoqa.com
+
+
+  Scenario Outline: Submitting form
     And The tester click the "<Modules>"
     And The tester click the Practice Form
     When The tester fills in "<FirstName>", "<LastName> ","<EmailAddress>","<Gender>","<PhoneNumber>"
@@ -37,8 +40,9 @@ Feature: Form
     Then The tester should be able to see correct user details
 
     Examples:
-      | Modules | FirstName | LastName | EmailAddress               | Gender | PhoneNumber |
-      | forms   | Jane      | Smith    | automation-test@tester.com | Male   | 1234567891  |
+      | Modules | FirstName | LastName | EmailAddress                | Gender | PhoneNumber |
+      | forms   | Jane      | Smith    | automation-test@tester.com  | Female | 1234567891  |
+      | forms   | John      | Chan     | automation-test2@tester.com | Male   | 9876543211  |
 
 
 

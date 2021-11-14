@@ -8,7 +8,7 @@ class formPage extends Page {
     get inputLastName () { return $('//input[@id="lastName"]') }
 
     // Contains all methods for naviagting on the page
-    
+    //USING STATIC WAITS ARE BAD PRACTICE, DYNAMIC WAITS(IMPLICIT WAITS SHOULD BE USED IN HOOKS/MAIN)
     fillName(firstName, lastName){
         browser.pause(4000)
         this.inputFirstName.setValue(firstName);

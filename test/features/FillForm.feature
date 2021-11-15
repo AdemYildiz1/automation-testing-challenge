@@ -30,19 +30,20 @@ Feature: Form
 
   Background:
     Given The tester on web page of demoqa.com
+    And The tester click the "<Modules>"
 
 
   Scenario Outline: Submitting form
-    And The tester click the "<Modules>"
+
     And The tester click the Practice Form
     When The tester fills in "<FirstName>", "<LastName> ","<EmailAddress>","<Gender>","<PhoneNumber>"
     And The tester click the submit
     Then The tester should be able to see correct user details
 
     Examples:
-      | Modules | FirstName | LastName | EmailAddress                | Gender | PhoneNumber |
-      | forms   | Jane      | Smith    | automation-test@tester.com  | Female | 1234567891  |
-      | forms   | John      | Chan     | automation-test2@tester.com | Male   | 9876543211  |
+         | FirstName | LastName | EmailAddress                | Gender | PhoneNumber |
+         | Jane      | Smith    | automation-test@tester.com  | Female | 1234567891  |
+         | John      | Chan     | automation-test2@tester.com | Male   | 9876543211  |
 
 
 
